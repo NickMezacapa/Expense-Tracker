@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 import { Button, Stack } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import BudgetCard from './Components/BudgetCard';
@@ -8,6 +7,7 @@ import TotalBudgetCard from './Components/TotalBudgetCard';
 import AddBudgetModal from './Components/AddBudgetModal';
 import AddExpenseModal from './Components/AddExpenseModal';
 import { useBudgets } from './contexts/BudgetContext';
+import './App.css';
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
