@@ -30,10 +30,18 @@ function App() {
         <Button variant="outline-primary" onClick={openAddExpenseModal}>Add Expense</Button>
       </Stack>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1rem", alignItems: "flex-start" }}>
+
+      <div 
+        style={{ 
+          display: "grid", 
+          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", 
+          gap: "1rem", 
+          alignItems: "flex-start" 
+          }}>
+
         {budgets.map(budget => {
           const amount = getBudgetExpenses(budget.id)
-                        .reduce((total, expense) => total + expense.amount, 0)
+                        .reduce((total, expense) => total + expense.amount, 0);
           return (
           <BudgetCard
             key={budget.id} 
@@ -43,19 +51,25 @@ function App() {
             onAddExpenseClick={() => openAddExpenseModal(budget.id)}
             />
           )
-      })}
+        })}
+
         <UncategorizedBudgetCard onAddExpenseClick={openAddExpenseModal} />
         <TotalBudgetCard />
       </div>
+      
 
     </Container>
 
-    <AddBudgetModal show={showAddBudgetModal} handleClose={() => setShowAddBudgetModal(false)} />
-    <AddExpenseModal 
-    show={showAddExpenseModal}
-    defaultBudgetId={addExpenseModalBudgetId} 
-    handleClose={() => setShowAddExpenseModal(false)} 
+    <AddBudgetModal 
+      show={showAddBudgetModal} 
+      handleClose={() => setShowAddBudgetModal(false)} 
     />
+    <AddExpenseModal 
+      show={showAddExpenseModal}
+      defaultBudgetId={addExpenseModalBudgetId} 
+      handleClose={() => setShowAddExpenseModal(false)} 
+    />
+
     </>
   );
 }
