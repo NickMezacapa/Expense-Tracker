@@ -22,6 +22,10 @@ function App() {
     setAddExpenseModalBudgetId(budgetId);
   }
 
+  function clearMemory() {
+    localStorage.clear();
+  }
+
   return (
     <>
     <Container className="my-4">
@@ -30,6 +34,7 @@ function App() {
         <h1 className="me-auto">Budgets</h1>
         <Button variant="primary" onClick={() => setShowAddBudgetModal(true)}>Add Budget</Button>
         <Button variant="outline-primary" onClick={openAddExpenseModal}>Add Expense</Button>
+        <Button variant="outline-secondary" onClick={clearMemory}>Clear</Button>
       </Stack>
 
 
