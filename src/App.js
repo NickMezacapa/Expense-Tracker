@@ -60,7 +60,6 @@ function App() {
             />
           )
         })}
-
         <UncategorizedBudgetCard 
             onAddExpenseClick={openAddExpenseModal} 
             onViewExpenseClick={() => setViewExpensesModalBudgetId(UNCATEGORIZED_BUDGET_ID)} 
